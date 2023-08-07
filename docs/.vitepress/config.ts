@@ -9,12 +9,17 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Documentation", link: "/documentation/quick-start" },
+      { text: "EMNLP 2023 Demo", link: "/emnlp-demo" },
     ],
 
     sidebar: [
       {
         text: "Documentation",
         items: [{ text: "Quick Start", link: "/documentation/quick-start" }],
+      },
+      {
+        text: "Paper",
+        items: [{ text: "EMNLP 2023 Demo", link: "/emnlp-demo" }],
       },
     ],
 

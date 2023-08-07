@@ -10,12 +10,17 @@ hero:
     - theme: brand
       text: Quick Start
       link: /documentation/quick-start
+    - theme: alt
+      text: EMNLP 2023 Demo
+      link: /emnlp-demo
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Interactivity
+    details: Create fully interactive interfaces for your models
+  - title: Flexibility
+    details: Adopt multi-granular customization of interfaces
+  - title: Usability
+    details: Explore various APIs for integration with pure Python
+  - title: Automation
+    details: Automate your model's showcase and evaluation
 ---
