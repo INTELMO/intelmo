@@ -25,7 +25,8 @@ if __name__ == "__main__":
 				"name": "Sentiment",
                 "description": "Show the sentiment of the text",
                 "task_type": "generation",
-                "task": ... # any function that takes article text and returns a string
+				# any function that takes article text and returns a string
+                "task": ...
 			}
 		],
     )
