@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSS Sources</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+</head>
+<body>
+{% include "header.html" %}
+<div class="px-6 py-12 max-w-2xl mx-auto">
+    <div class="px-4">
+        <h1 class="text-4xl font-bold mb-12">RSS Sources</h1>
+        <div class="space-y-4">
+            {% for rss in rss_sources %}
+                <a class="block p-4 border border-gray-200 hover:border-gray-500 rounded-lg cursor-pointer"
+                   href="/rss/{{ rss['id'] }}">{{ rss["name"] }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

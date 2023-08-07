@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='dist/css/output.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='dist/css/custom.css') }}">
+</head>
+<body>
+<div class="sticky top-0 w-full shadow-lg p-4 bg-white space-x-4 flex flex-row z-40">
+    {% for function in functions %}
+        <div class="group">
+            {# a hrefs like switches #}
+            <a href="/reader/toggle_function?url={{ url }}&function={{ function.id }}&enabled_functions={{ enabled_functions | join(",") }}">
+                <span class="{% if function.id in enabled_functions %} underline {% endif %}">{{ function.name }}</span>
+            </a>
+            {% if function.form %}
+                <div class="invisible group-hover:visible p-4 shadow-lg absolute z-50 bg-white rounded-lg">
+                    {% with form=function.form, id=function.id, value=function_forms[function.id] %}
+                        {% include "form.html" ignore missing %}
+                    {% endwith %}
+                </div>
+            {% endif %}
+
+        </div>
+
+
+    {% endfor %}
+</div>
+<article class="prose lg:prose-lg mx-auto py-12 relative">
+
+    <div class="px-4">
+        <h1>
+            {{ article.title }}
+        </h1>
+
+        {% if article.global_block %}
+            {% with block=article.global_block, BlockTypeEnum=BlockTypeEnum, BlockLevelEnum=BlockLevelEnum %}
+                {% include "block.html" %}
+            {% endwith %}
+        {% endif %}
+
+        {% for block in article.blocks %}
+            {% with block=block, BlockTypeEnum=BlockTypeEnum, BlockLevelEnum=BlockLevelEnum %}
+                {% include "block.html" %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+</article>
+</body>
+</html>

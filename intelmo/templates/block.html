@@ -1,0 +1,29 @@
+<div
+        class="cursor-default
+        {% if block.level == BlockLevelEnum.Paragraph %} rounded-md block p-4 relative
+        {% elif block.level == BlockLevelEnum.Global %} fixed top-16 right-0 m-4 p-4 z-30 bg-white shadow-lg rounded-lg
+        {% else %} inline
+        {% endif %}
+        {% if block.type == BlockTypeEnum.Bold %} font-bold {% endif %}
+        {% if block.type == BlockTypeEnum.Italic %} italic {% endif %}
+        {% if block.type == BlockTypeEnum.Underline %} underline {% endif %}
+        {% if block.type == BlockTypeEnum.Light %} text-gray-400 {% endif %}
+        {% if block.type == BlockTypeEnum.Title %} text-2xl font-bold {% endif %}
+        {% if block.type == BlockTypeEnum.Quote %} border-1 border-blue-500 bg-blue-200 text-blue-800 underline {% endif %}
+">
+    {% if block.children %}
+        {% for child in block.children %}
+            {% with block=child, BlockTypeEnum=BlockTypeEnum, BlockLevelEnum=BlockLevelEnum %}
+                {% include 'block.html' %}
+            {% endwith %}
+        {% endfor %}
+    {% else %}
+        {{ block.content|safe }}
+    {% endif %}
+
+    {% if block.extra %}
+        <div class="absolute top-0 left-full p-2 bg-white rounded-lg shadow-lg text-sm w-max">
+            {{ block.extra|safe }}
+        </div>
+    {% endif %}
+</div>

@@ -1,1 +1,13 @@
 node_modules
+dist
+
+# cache
+**/__pycache__/
+
+# egg info
+*.egg-info/
+
+# python environment
+venv/
+
+**/.DS_Store

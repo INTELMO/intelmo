@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ rss.name }}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+
+</head>
+<body>
+
+{% include "header.html" %}
+<div class="px-6 py-12 max-w-2xl mx-auto">
+    <div class="px-4">
+        <h1 class="text-4xl font-bold mb-12">{{ rss.name }}</h1>
+        <div class="space-y-4">
+            {% for item in rss["feed"].entries %}
+                <a class="block p-4 border border-gray-200 hover:border-gray-500 rounded-lg cursor-pointer"
+                   href="{{ item.href }}">
+                    <div class="space-y-2">
+                        <p class="font-medium">{{ item.title }}</p>
+                        <p class="text-gray-600 text-sm">{{ item.description }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
