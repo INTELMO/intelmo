@@ -5,14 +5,11 @@ layout: home
 hero:
   name: "INTELMO"
   text: "Interface Toolkit for Extensible Language Models"
-  tagline: My great project tagline
+  tagline: Enhancing Models' Adoption of Interactive Interfaces
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Quick Start
+      link: /documentation/quick-start
 
 features:
   - title: Feature A
@@ -22,4 +19,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
