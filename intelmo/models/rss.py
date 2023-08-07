@@ -45,4 +45,3 @@ class RSS:
         self.name = name
         self.url = url
         self.feed = parse(url)
-

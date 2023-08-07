@@ -37,7 +37,7 @@ def custom_translate(article: Article) -> Article:
 
 
 def translate(paragraphs: List[str], to_lang) -> List[dict]:
-    translator = Translator(to_lang=to_lang)
+    translator = GoogleTranslator(source="auto", target=to_lang)
     translated_paragraphs = []
     for index, paragraph in enumerate(paragraphs):
         translation = translator.translate(paragraph)
