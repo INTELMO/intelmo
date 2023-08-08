@@ -39,3 +39,5 @@ Then you can start the server with:
 ```bash
 python example.py
 ```
+
+A development server will be started at `http://localhost:5000`.

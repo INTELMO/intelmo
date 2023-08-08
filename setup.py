@@ -1,17 +1,5 @@
 from setuptools import find_packages
 from setuptools import setup
-from setuptools.command.install import install
-
-
-class PostInstallCommand(install):
-    """Post-installation for installation mode."""
-
-    def run(self):
-        # Install nltk punkt
-        import nltk
-        nltk.download('punkt')
-        install.run(self)
-
 
 with open('README.md', "r") as f:
     long_description = f.read()
@@ -23,14 +11,14 @@ print(find_packages(
 
 setup(
     name='intelmo',
-    version='1.0.0',
+    version='1.0.3',
     description='Interface Toolkit for Extensive Language Models',
     long_description=long_description,
     author="Chunxu Yang",
     author_email="chunxuyang@ucla.edu",
     # include_package_data=True,
     packages=find_packages(
-        exclude=["examples", "tests"],
+        exclude=["examples", "tests", "docs"],
     ),
     include_package_data=True,
     package_data={
@@ -52,7 +40,4 @@ setup(
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
     ],
-    cmdclass={
-        'install': PostInstallCommand,
-    },
 )

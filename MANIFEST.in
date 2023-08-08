@@ -1,0 +1,2 @@
+recursive-include intelmo/templates *
+recursive-include intelmo/static *
