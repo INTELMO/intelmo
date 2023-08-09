@@ -1,4 +1,6 @@
 from typing import Callable, List, TypedDict, Optional
+
+from pydantic import BaseModel
 from typing_extensions import NotRequired, Literal
 
 from ..models.block import Block

@@ -33,6 +33,7 @@ setup(
         'nltk',
         'feedparser',
         'pydantic',
+        'bigtree',
     ],
     license='MIT',
     platforms=["all"],

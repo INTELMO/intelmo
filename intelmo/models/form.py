@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, List
 
 from pydantic import BaseModel
 
@@ -32,6 +32,6 @@ class FormItem(BaseModel):
             assert self.options is not None
 
 
-Form = list[FormItem]
+Form = List[FormItem]
 
 

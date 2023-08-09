@@ -10,6 +10,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "Documentation", link: "/documentation/quick-start" },
       { text: "EMNLP 2023 Demo", link: "/emnlp-demo" },
+      { text: "Playground", link: "/playground" },
     ],
 
     sidebar: [
@@ -23,8 +24,8 @@ export default defineConfig({
       },
     ],
 
-    // socialLinks: [
-    //   { icon: "github", link: "https://github.com/vuejs/vitepress" },
-    // ],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/INTELMO/intelmo" },
+    ],
   },
 });

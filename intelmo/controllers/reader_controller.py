@@ -6,7 +6,8 @@ from flask import Blueprint, render_template, request, current_app, redirect
 
 from ..models.article import Article
 from ..models.block import BlockTypeEnum, BlockLevelEnum, BlockStatusEnum, Block
-from ..types.model import ModelConfiguration, InteractiveFunctionType
+from ..models.task import TaskModelConfiguration
+from ..types.model import InteractiveFunctionType
 from ..utils.extraction import extract_url_to_article
 
 reader_page = Blueprint('reader_page', __name__)
@@ -124,22 +125,22 @@ def reader_page_index():
     if url is None:
         return "404"
     url_decoded = urllib.parse.unquote_plus(url)
-    model = current_app.config['model']  # type: ModelConfiguration
-    composition = model.composition
+    model = current_app.config['model']  # type: TaskModelConfiguration
+    # composition = model.composition
 
     article = extract_url_to_article(url_decoded)
 
     if len(enabled_functions) != 0:
-        functions = list(map(lambda x: model.get_function(x), enabled_functions))
+        # if composition == "parallel":
+        #     function_result = parallel_functions(functions, article)
+        # elif composition == "exclusive":
+        #     function_result = exclusive_functions(functions, article)
+        # elif composition == "pipeline":
+        #     function_result = pipeline_functions(functions, article)
+        # else:
+        #     raise Exception("Unknown composition type: " + composition)
 
-        if composition == "parallel":
-            function_result = parallel_functions(functions, article)
-        elif composition == "exclusive":
-            function_result = exclusive_functions(functions, article)
-        elif composition == "pipeline":
-            function_result = pipeline_functions(functions, article)
-        else:
-            raise Exception("Unknown composition type: " + composition)
+        function_result = model.task_tree.run_function(enabled_functions, article, function_forms)
 
         article.blocks = function_result.blocks
         article.global_block = function_result.global_block
@@ -148,7 +149,7 @@ def reader_page_index():
         "article": article,
         "BlockTypeEnum": BlockTypeEnum,
         "BlockLevelEnum": BlockLevelEnum,
-        "functions": model.functions,
+        "functions": model.task_tree.get_leaves(),
         "enabled_functions": enabled_functions,
         "url": url,
         "function_forms": function_forms,
@@ -177,18 +178,12 @@ def toggle_function():
     else:
         enabled_functions = enabled_functions.split(',')
 
-    model = current_app.config['model']  # type: ModelConfiguration
-    composition = model.composition
-
     if function is None or url is None:
         return "404"
 
-    if composition == "exclusive":
-        enabled_functions = [function]
+    if function in enabled_functions:
+        enabled_functions.remove(function)
     else:
-        if function in enabled_functions:
-            enabled_functions.remove(function)
-        else:
-            enabled_functions.append(function)
+        enabled_functions.append(function)
 
     return redirect(f"/reader/article?url={url}&functions={','.join(enabled_functions)}")

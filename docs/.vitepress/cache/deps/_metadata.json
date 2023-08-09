@@ -1,35 +1,23 @@
 {
-  "hash": "abf3156b",
-  "browserHash": "c66a41b4",
+  "hash": "5169793d",
+  "browserHash": "7892191d",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-browser.js",
       "file": "vue.js",
-      "fileHash": "e3f473bd",
+      "fileHash": "8778fdc0",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "addeae38",
+      "fileHash": "295aade7",
       "needsInterop": false
     },
     "@theme/index": {
       "src": "../../../../node_modules/vitepress/dist/client/theme-default/index.js",
       "file": "@theme_index.js",
-      "fileHash": "435c3f3c",
-      "needsInterop": false
-    },
-    "@socialplayer/vue": {
-      "src": "../../../../node_modules/@socialplayer/vue/dist/index.mjs",
-      "file": "@socialplayer_vue.js",
-      "fileHash": "adad9303",
-      "needsInterop": false
-    },
-    "@socialplayer/vimeo-plugin": {
-      "src": "../../../../node_modules/@socialplayer/vimeo-plugin/dist/index.mjs",
-      "file": "@socialplayer_vimeo-plugin.js",
-      "fileHash": "f8cd3b99",
+      "fileHash": "8db76cf3",
       "needsInterop": false
     }
   },

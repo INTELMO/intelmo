@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../node_modules/@socialplayer/core/dist/chunk-ITKLQDRO.mjs", "../../../../node_modules/@socialplayer/vue/dist/chunk-UBUGDGNK.mjs"],
-  "sourcesContent": ["var i=({id:s})=>{let e=n=>{for(let t in n){let o=n[t],l=u=>{o({...u,id:s});};n[t]=l;}},c={playbackActions:{},use:(n,t)=>{let o=n.install({},t);return e(o),Object.assign(c.playbackActions,o),o}};for(let n of i.$pluginsQueue){let t=n();e(t),Object.assign(c.playbackActions,t);}return c};i.$pluginsQueue=[];i.use=(s,e)=>{i.$pluginsQueue.push(()=>s.install({},e));};\n\nexport { i as a };\n", "import { createSocialPlayer } from '@socialplayer/core';\n\nvar l=a=>{let{playbackActions:c}=createSocialPlayer(a);return {playbackActions:c}};l.use=createSocialPlayer.use;\n\nexport { l as a };\n"],
-  "mappings": ";AAAA,IAAI,IAAE,CAAC,EAAC,IAAG,EAAC,MAAI;AAAC,MAAI,IAAE,OAAG;AAAC,aAAQ,KAAK,GAAE;AAAC,UAAI,IAAE,EAAE,CAAC,GAAEA,KAAE,OAAG;AAAC,UAAE,EAAC,GAAG,GAAE,IAAG,EAAC,CAAC;AAAA,MAAE;AAAE,QAAE,CAAC,IAAEA;AAAA,IAAE;AAAA,EAAC,GAAE,IAAE,EAAC,iBAAgB,CAAC,GAAE,KAAI,CAAC,GAAE,MAAI;AAAC,QAAI,IAAE,EAAE,QAAQ,CAAC,GAAE,CAAC;AAAE,WAAO,EAAE,CAAC,GAAE,OAAO,OAAO,EAAE,iBAAgB,CAAC,GAAE;AAAA,EAAC,EAAC;AAAE,WAAQ,KAAK,EAAE,eAAc;AAAC,QAAI,IAAE,EAAE;AAAE,MAAE,CAAC,GAAE,OAAO,OAAO,EAAE,iBAAgB,CAAC;AAAA,EAAE;AAAC,SAAO;AAAC;AAAE,EAAE,gBAAc,CAAC;AAAE,EAAE,MAAI,CAAC,GAAE,MAAI;AAAC,IAAE,cAAc,KAAK,MAAI,EAAE,QAAQ,CAAC,GAAE,CAAC,CAAC;AAAE;;;ACExW,IAAI,IAAE,OAAG;AAAC,MAAG,EAAC,iBAAgB,EAAC,IAAE,EAAmB,CAAC;AAAE,SAAO,EAAC,iBAAgB,EAAC;AAAC;AAAE,EAAE,MAAI,EAAmB;",
-  "names": ["l"]
-}
