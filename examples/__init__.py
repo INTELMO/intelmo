@@ -1,2 +1,2 @@
-from .highlight import *
+from .modification import *
 from .generation import *

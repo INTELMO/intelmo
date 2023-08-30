@@ -1,5 +1,5 @@
 from generation.translationExample import custom_translate
-from highlight.spacyExample import SpaCySummarizer
+from modification.spacyExample import SpaCySummarizer
 from intelmo import create_server
 
 if __name__ == "__main__":
@@ -11,7 +11,7 @@ if __name__ == "__main__":
             {
                 "name": "Summarize",
                 "description": "Summarize the text",
-                "task_type": "highlight",
+                "task_type": "modification",
                 "task": SpaCySummarizer().summarize_count,
                 "form": [
                     {

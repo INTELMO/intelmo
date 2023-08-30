@@ -18,20 +18,21 @@ except LookupError:
 
 def get_interactive_function(task: InteractiveTaskType) -> InteractiveFunctionType:
     res_func = None
-    if task.task_type == "highlight":
-        def highlight_func(article: Article, form: Optional[dict] = None) -> Article:
+    if task.task_type == "modification":
+        def modification_func(article: Article, form: Optional[dict] = None) -> Article:
             new_article = article.copy()
             paragraphs = article.blocks
             total_text = '\n'.join(map(lambda p: p.content, paragraphs))
-            highlight_res = task.task(total_text, form) if form is not None else task.task(total_text)
+            modification_res = task.task(
+                total_text, form) if form is not None else task.task(total_text)
             processed_paragraphs = []
             for paragraph in paragraphs:
                 # split the paragraph into sentences
                 sentences = nltk.sent_tokenize(paragraph.content)
                 processed_sentences = []
                 for sentence in sentences:
-                    # if the sentence is highlighted, add it to the list
-                    if sentence in highlight_res:
+                    # if the sentence is modificationed, add it to the list
+                    if sentence in modification_res:
                         processed_sentences.append(
                             Block(BlockLevelEnum.Sentence, BlockTypeEnum.Bold, sentence, None, BlockStatusEnum.New))
                     else:
@@ -45,7 +46,7 @@ def get_interactive_function(task: InteractiveTaskType) -> InteractiveFunctionTy
 
             return new_article
 
-        res_func = highlight_func
+        res_func = modification_func
 
     elif task.task_type == "generation":
         def generation_func(article: Article, form: Optional[dict] = None) -> Article:
@@ -54,30 +55,32 @@ def get_interactive_function(task: InteractiveTaskType) -> InteractiveFunctionTy
             #     BlockLevelEnum.Paragraph, BlockTypeEnum.Normal, p.content, None), article.blocks))
             total_text = article.get_content()
 
-            generation_res = task.task(total_text, form) if form is not None else task.task(total_text)
+            generation_res = task.task(
+                total_text, form) if form is not None else task.task(total_text)
 
-            global_block = Block(BlockLevelEnum.Global, BlockTypeEnum.Normal, generation_res, None, BlockStatusEnum.New)
+            global_block = Block(BlockLevelEnum.Global, BlockTypeEnum.Normal,
+                                 generation_res, None, BlockStatusEnum.New)
             new_article.global_block = global_block
             return new_article
 
         res_func = generation_func
 
-    elif task.task_type == "insert":
-        def insert_func(article: Article, form: Optional[dict] = None) -> Article:
+    elif task.task_type == "insertion":
+        def insertion_func(article: Article, form: Optional[dict] = None) -> Article:
             old_paragraphs = article.blocks
             new_article = article.copy()
             new_paragraphs = []
-            insert_func_res = task.task(
+            insertion_func_res = task.task(
                 list(map(lambda p: p.content, old_paragraphs)),
                 form
             ) if form is not None else task.task(list(map(lambda p: p.content, old_paragraphs)))
-            # the type of insert_func_res is like this:
+            # the type of insertion_func_res is like this:
             # [{"position": 1, "content": "hello world"}, {"position": 3, "content": "hello world"}]
             for index, paragraph in enumerate(old_paragraphs):
                 new_paragraphs.append(
                     Block(BlockLevelEnum.Paragraph, BlockTypeEnum.Normal, paragraph.content, None,
                           BlockStatusEnum.Untouched))
-                for insert_res in insert_func_res:
+                for insert_res in insertion_func_res:
                     if insert_res["position"] == index:
                         new_paragraphs.append(
                             Block(BlockLevelEnum.Paragraph, BlockTypeEnum.Quote, insert_res["content"], None,
@@ -86,7 +89,7 @@ def get_interactive_function(task: InteractiveTaskType) -> InteractiveFunctionTy
             new_article.blocks = new_paragraphs
             return new_article
 
-        res_func = insert_func
+        res_func = insertion_func
 
     elif task.task_type == "custom":
         res_func = task.task
@@ -287,7 +290,6 @@ class TaskTree:
 if __name__ == "__main__":
     def _example_task():
         pass
-
 
     tasks = Exclusive(
         Compatible(

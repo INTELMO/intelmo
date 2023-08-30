@@ -1,5 +1,5 @@
 from intelmo import create_server
-from highlight.spacyExample import SpaCySummarizer
+from modification.spacyExample import SpaCySummarizer
 from custom.customExample import SpaCyAnnotator
 from generation.globalExample import analyse_sentiment
 from generation.translationExample import translate_to_zh, custom_translate
@@ -14,7 +14,7 @@ if __name__ == "__main__":
                 {
                     "name": "Summarize",
                     "description": "Summarize the text",
-                    "task_type": "highlight",
+                    "task_type": "modification",
                     "task": SpaCySummarizer().summarize_count,
                     "form": [
                         {
@@ -44,7 +44,7 @@ if __name__ == "__main__":
             {
                 "name": "Translate",
                 "description": "Translate the text to Chinese",
-                "task_type": "insert",
+                "task_type": "insertion",
                 "task": translate_to_zh,
                 "form": [
                     {

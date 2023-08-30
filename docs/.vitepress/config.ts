@@ -8,15 +8,34 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Documentation", link: "/documentation/quick-start" },
+      { text: "Documentation", link: "/start/quick-start" },
       { text: "EMNLP 2023 Demo", link: "/emnlp-demo" },
       { text: "Playground", link: "/playground" },
     ],
 
     sidebar: [
       {
-        text: "Documentation",
-        items: [{ text: "Quick Start", link: "/documentation/quick-start" }],
+        text: "Getting Started",
+        items: [{ text: "Quick Start", link: "/start/quick-start" }],
+      },
+      {
+        text: "Basic Concepts",
+        items: [
+          { text: "Block", link: "/concepts/block" },
+          { text: "Task", link: "/concepts/task" },
+        ],
+      },
+      {
+        text: "Built-in Tasks",
+        items: [
+          { text: "Insertion", link: "/tasks/insertion" },
+          { text: "Modification", link: "/tasks/modification" },
+          { text: "Generation", link: "/tasks/generation" },
+        ],
+      },
+      {
+        text: "Customization",
+        items: [{ text: "Custom Tasks", link: "/customization/custom-tasks" }],
       },
       {
         text: "Paper",

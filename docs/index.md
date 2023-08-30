@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Quick Start
-      link: /documentation/quick-start
+      link: /start/quick-start
     - theme: alt
       text: EMNLP 2023 Demo
       link: /emnlp-demo

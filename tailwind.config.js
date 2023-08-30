@@ -2,7 +2,9 @@
 module.exports = {
   content: [
     "intelmo/templates/**/*.html",
-    "intelmo/static/src/**/*.js"
+    "intelmo/static/src/**/*.js",
+    'docs/**/*.{html,js,vue,ts,md}',
+    'docs/.vitepress/**/*.{html,js,vue,ts,md}',
   ],
   theme: {
     extend: {},

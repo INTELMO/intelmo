@@ -38,7 +38,7 @@ class InteractiveFunctionType:
         self.form = form
 
 
-TaskType = Literal["highlight", "insert", "generation", "custom"]
+TaskType = Literal["modification", "insertion", "generation", "custom"]
 
 
 class InteractiveTaskConfiguration(TypedDict):
