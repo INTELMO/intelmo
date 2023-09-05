@@ -26,7 +26,7 @@ def task(article: Article) -> Article:
     return article
 ```
 
-INTELMO provides a set of predefined tasks to simplify the integration of INTELMO into existing NLP models. These tasks have simplified parameters and return types. See [Built-in Tasks Section](/tasks/insertion) for more details.
+INTELMO provides a set of predefined tasks to simplify the integration of INTELMO into existing NLP models. These tasks have simplified parameters and return types. <!-- See [Built-in Tasks Section](/tasks/insertion) for more details. -->
 
 ## Task Composition
 

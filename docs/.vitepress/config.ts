@@ -26,14 +26,14 @@ export default withMermaid({
           { text: "Task", link: "/concepts/task" },
         ],
       },
-      {
-        text: "Built-in Tasks",
-        items: [
-          { text: "Insertion", link: "/tasks/insertion" },
-          { text: "Modification", link: "/tasks/modification" },
-          { text: "Generation", link: "/tasks/generation" },
-        ],
-      },
+      // {
+      //   text: "Built-in Tasks",
+      //   items: [
+      //     { text: "Insertion", link: "/tasks/insertion" },
+      //     { text: "Modification", link: "/tasks/modification" },
+      //     { text: "Generation", link: "/tasks/generation" },
+      //   ],
+      // },
       // {
       //   text: "Customization",
       //   items: [{ text: "Custom Tasks", link: "/customization/custom-tasks" }],
