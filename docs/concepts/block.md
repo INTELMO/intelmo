@@ -102,10 +102,10 @@ The `level` field of a block can be set to `paragraph`, `sentence`, `word` or `g
 
 | Type        | Example                                                                                                                                |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| "normal"    | <div class="p-1 bg-white border rounded">The quick brown fox jumps over the lazy dog.</div>                                            |
-| "bold"      | <div class="font-bold p-1 bg-white border rounded">The quick brown fox jumps over the lazy dog.</div>                                  |
-| "italic"    | <div class="italic p-1 bg-white border rounded">The quick brown fox jumps over the lazy dog.</div>                                     |
-| "underline" | <div class="underline p-1 bg-white border rounded">The quick brown fox jumps over the lazy dog.</div>                                  |
+| "normal"    | <div class="p-1 bg-white text-black border rounded">The quick brown fox jumps over the lazy dog.</div>                                 |
+| "bold"      | <div class="font-bold p-1 bg-white text-black border rounded">The quick brown fox jumps over the lazy dog.</div>                       |
+| "italic"    | <div class="italic p-1 bg-white text-black border rounded">The quick brown fox jumps over the lazy dog.</div>                          |
+| "underline" | <div class="underline p-1 bg-white text-black border rounded">The quick brown fox jumps over the lazy dog.</div>                       |
 | "light"     | <div class="text-gray-400 p-1 bg-white border rounded">The quick brown fox jumps over the lazy dog.</div>                              |
-| "title"     | <div class="text-xl p-1 bg-white border rounded font-semibold capitalize">The quick brown fox jumps over the lazy dog</div>            |
+| "title"     | <div class="text-xl p-1 bg-white text-black border rounded font-semibold capitalize">The quick brown fox jumps over the lazy dog</div> |
 | "quote"     | <div class="border-blue-500 border bg-blue-200 text-blue-800 underline p-1 rounded">The quick brown fox jumps over the lazy dog.</div> |
