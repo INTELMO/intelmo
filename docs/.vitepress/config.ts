@@ -34,10 +34,10 @@ export default withMermaid({
           { text: "Generation", link: "/tasks/generation" },
         ],
       },
-      {
-        text: "Customization",
-        items: [{ text: "Custom Tasks", link: "/customization/custom-tasks" }],
-      },
+      // {
+      //   text: "Customization",
+      //   items: [{ text: "Custom Tasks", link: "/customization/custom-tasks" }],
+      // },
       {
         text: "Paper",
         items: [{ text: "EMNLP 2023 Demo", link: "/emnlp-demo" }],
