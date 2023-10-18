@@ -1,5 +1,4 @@
-from intelmo.server import create_server
-from intelmo.models.task import Compatible
+from intelmo import create_server, Compatible
 
 from collections import Counter
 from heapq import nlargest

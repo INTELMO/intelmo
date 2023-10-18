@@ -1,7 +1,7 @@
 
 from typing import List
-from models.form import Form
-from models.task import InteractiveTaskType
+from ..models.form import Form
+from ..models.task import InteractiveTaskType
 from nicegui import ui
 
 enabled_functions = []

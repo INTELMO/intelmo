@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from models.block import Block
+from ..models.block import Block
 
 
 class Article:

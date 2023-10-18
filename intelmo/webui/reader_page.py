@@ -1,12 +1,12 @@
 from typing import List
 import urllib.parse
 from nicegui import ui
-from models.task import InteractiveTaskType, TaskModelConfiguration
+from ..models.task import InteractiveTaskType, TaskModelConfiguration
 
-from models.block import Block, BlockTypeEnum, BlockLevelEnum
-from models.article import Article
-from utils.extraction import extract_url_to_article
-from ui.header import make_header, function_forms
+from ..models.block import Block, BlockTypeEnum, BlockLevelEnum
+from ..models.article import Article
+from ..utils.extraction import extract_url_to_article
+from .header import make_header, function_forms
 
 article = Article("", "", [])
 

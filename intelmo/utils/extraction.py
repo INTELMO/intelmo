@@ -1,7 +1,7 @@
 import newspaper
 
-from models.article import Article
-from models.block import Block, BlockLevelEnum, BlockTypeEnum
+from ..models.article import Article
+from ..models.block import Block, BlockLevelEnum, BlockTypeEnum
 
 
 def extract_url(url):

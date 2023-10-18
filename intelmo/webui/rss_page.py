@@ -2,7 +2,7 @@ from nicegui import ui
 import urllib.parse
 
 # from ..models.rss import RSS_SOURCES
-from intelmo.models.rss import RSS_SOURCES, RSS
+from ..models.rss import RSS_SOURCES, RSS
 
 
 RSS_SOURCES = [

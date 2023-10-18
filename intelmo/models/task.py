@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import List, Union, Callable, Optional, Literal, NotRequired, TypedDict
 import itertools
-from models.form import Form
-from models.article import Article
-from models.block import Block, BlockLevelEnum, BlockTypeEnum, BlockStatusEnum
+from ..models.form import Form
+from ..models.article import Article
+from ..models.block import Block, BlockLevelEnum, BlockTypeEnum, BlockStatusEnum
 
 import nltk
 

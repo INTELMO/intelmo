@@ -6,12 +6,12 @@ from heapq import nlargest
 from collections import Counter
 from typing import Union
 from nicegui import ui
-from ui import rss_page, reader_page
-from models.task import InteractiveTaskConfiguration, TaskModelConfiguration, Composition, Compatible
+from .webui import rss_page, reader_page
+from .models.task import InteractiveTaskConfiguration, TaskModelConfiguration, Composition, Compatible
 
 
 class Server:
-    def __init__(self, configuration: TaskModelConfiguration):
+    def __init__(self, configuration: TaskModelConfiguration, debug: bool = False):
         self.configuration = configuration
 
     def create_routes(self):
@@ -32,6 +32,7 @@ class Server:
         self.create_routes()
         ui.run(
             title=self.configuration.name if self.configuration.name else "INTELMO",
+
         )
 
 
