@@ -1,8 +1,7 @@
-// import { defineConfig } from "vitepress";
-import { withMermaid } from "vitepress-plugin-mermaid";
+// import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
-export default withMermaid({
+export default {
   title: "INTELMO",
   description: "Interface Toolkit for Extensible Language Models",
   themeConfig: {
@@ -11,7 +10,7 @@ export default withMermaid({
       { text: "Home", link: "/" },
       { text: "Documentation", link: "/start/quick-start" },
       { text: "EMNLP 2023 Demo", link: "/emnlp-demo" },
-      { text: "Playground", link: "/playground" },
+      { text: "Showcase", link: "/showcase" },
     ],
 
     sidebar: [
@@ -48,4 +47,4 @@ export default withMermaid({
       { icon: "github", link: "https://github.com/INTELMO/intelmo" },
     ],
   },
-});
+};

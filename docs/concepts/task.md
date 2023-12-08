@@ -61,16 +61,4 @@ server = create_server(
 
 In the above example, `Task 1`, `Task 2`, and `Task 3` will be executed in order. `Task 4` will be executed after `Task 1`, `Task 2`, and `Task 3`. `Task 5` and `Task 6` will be executed exclusively.
 
-The tree structure of the above example is as follows:
 
-```mermaid
-graph TD
-    A[Compatible] --> B[Pipelined]
-    B --> C[Task 1]
-    B --> D[Task 2]
-    B --> E[Task 3]
-    A --> F[Task 4]
-    A --> G[Exclusive]
-    G --> H[Task 5]
-    G --> I[Task 6]
-```
